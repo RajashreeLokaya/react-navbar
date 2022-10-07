@@ -1,2 +1,2 @@
-import loGoImage from "./niveus_logo.png";
+import loGoImage from "./logo.svg";
 export { loGoImage };
