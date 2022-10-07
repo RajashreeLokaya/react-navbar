@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./NavBar.scss";
 import { loGoImage } from "../../assets/images";
+import { MenuData } from "./navData";
 const NavBar = () => {
   const [mobileClose, setMobileClose] = useState(false);
   const handleMCloseBtn = () => {
-    console.log("hit");
     setMobileClose((x) => !x);
   };
   return (
@@ -12,27 +12,17 @@ const NavBar = () => {
       <a href="index.html">
         <img src={loGoImage} alt="logo"></img>
       </a>
-      <div
-        className={`desktop-sec ${
-          mobileClose ? "active" : ""
-        }`}
-      >
+      <div className={`desktop-sec ${mobileClose ? "active" : ""}`}>
         <ul>
-          <li>
-            <a className="active" href="index.html">
-              Home
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="index.html">Blog</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="index.html">Document</a>
-          </li>
+          {MenuData.map((item) => {
+            return (
+              <li>
+                <a className={item.cName} href={item.url}>
+                  {item.title}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div className="mobile-sec" onClick={handleMCloseBtn}>
