@@ -72,10 +72,6 @@ nav {
 @media screen and (max-width: 769px) {
   nav {
     .desktop-sec {
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      flex-direction: column;
       position: fixed;
       top: calc(40px + 1em); // 40px padding, and 1em text padding
 
@@ -88,6 +84,12 @@ nav {
       // visibility: hidden;
       transition: 0.3s ease-in-out;
       right: -300px;
+      ul {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+      }
       ul li {
         margin-bottom: 25px;
       }
